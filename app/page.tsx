@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import ContactForm from "./ContactForm";
-import { sanityFetch } from "@/sanity/lib/live";
+import { client } from "@/sanity/lib/client";
 import { SEITE_QUERY, NEUIGKEITEN_QUERY } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 
@@ -32,10 +32,8 @@ const STATIC_HOURS: OeffnungsZeit[] = [
 ];
 
 export default async function Page() {
-  const { data: seiteRaw } = await sanityFetch({ query: SEITE_QUERY });
-  const seite = seiteRaw as Seite | null;
-  const { data: neuigkeitenRaw } = await sanityFetch({ query: NEUIGKEITEN_QUERY });
-  const neuigkeiten = neuigkeitenRaw as Neuigkeit[];
+  const seite = (await client.fetch(SEITE_QUERY)) as Seite | null;
+  const neuigkeiten = (await client.fetch(NEUIGKEITEN_QUERY)) as Neuigkeit[];
 
   const hours =
     seite?.oeffnungszeiten?.length ? seite.oeffnungszeiten : STATIC_HOURS;
