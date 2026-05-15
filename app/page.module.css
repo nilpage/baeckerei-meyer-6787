@@ -442,6 +442,8 @@
 
 .neuigkeitCardBody {
   padding: 2.5rem 3rem;
+  background: var(--bg);
+  border-top: 3px solid var(--accent);
 }
 
 .neuigkeitDate {
@@ -449,14 +451,14 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--text);
   margin-bottom: 0.75rem;
   display: block;
 }
 
 .neuigkeitTitle {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.625rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
   color: var(--text);
@@ -465,7 +467,7 @@
 
 .neuigkeitText {
   font-size: 0.9375rem;
-  color: var(--muted);
+  color: var(--text);
   line-height: 1.7;
 }
 
@@ -624,7 +626,7 @@
 .formInput,
 .formTextarea {
   background: var(--bg-alt);
-  border: 1px solid var(--border);
+  border: 1.5px solid #9a8e80;
   padding: 0.75rem 1rem;
   font-family: var(--font-body);
   font-size: 1rem;
