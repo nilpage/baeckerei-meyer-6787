@@ -262,11 +262,11 @@
 
 .holzquoteText {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-size: clamp(1.875rem, 4.5vw, 3.25rem);
   font-style: italic;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--bg);
-  line-height: 1.4;
+  line-height: 1.35;
   margin-bottom: 1.5rem;
 }
 
@@ -274,7 +274,7 @@
   font-size: 0.8rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(192, 112, 32, 0.7);
+  color: var(--accent-light);
   font-family: var(--font-body);
 }
 
