@@ -240,13 +240,22 @@ export default async function Page() {
 
       {/* FAMILIE */}
       <section id="geschichte" className={styles.familie}>
-        <div className={styles.familieInner}>
-          <span className={styles.familieLabelLight}>Seit 1874</span>
-          <h2 className={styles.familieTitle}>Familientradition in Hitzkirch</h2>
-          <p className={styles.familieText}>
-            {seite?.familie?.text ??
-              "Liebe liegt nicht einfach herum wie ein Stein; wie Brot muss sie gemacht werden, immer wieder und immer frisch. Xaver Meyer gründete die Bäckerei 1874. Gerold und Marie-Theres Meyer führten sie 40 Jahre weiter. Seit 2006 sind Urban und Sandra Meyer mit ihren Söhnen Andrin, Matteo und Lino die nächste Generation."}
-          </p>
+        <div className={styles.familieLayout}>
+          <div className={styles.familiePortrait}>
+            <img
+              src="/WA0012.jpg"
+              alt="Urban Meyer, Inhaber der Bäckerei Meyer Hitzkirch"
+              className={styles.familiePortraitImg}
+            />
+          </div>
+          <div className={styles.familieInner}>
+            <span className={styles.familieLabelLight}>Seit 1874</span>
+            <h2 className={styles.familieTitle}>Familientradition in Hitzkirch</h2>
+            <p className={styles.familieText}>
+              {seite?.familie?.text ??
+                "Liebe liegt nicht einfach herum wie ein Stein; wie Brot muss sie gemacht werden, immer wieder und immer frisch. Xaver Meyer gründete die Bäckerei 1874. Gerold und Marie-Theres Meyer führten sie 40 Jahre weiter. Seit 2006 sind Urban und Sandra Meyer mit ihren Söhnen Andrin, Matteo und Lino die nächste Generation."}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -271,6 +280,10 @@ export default async function Page() {
               <a href="tel:+41419171074">041 917 10 74</a>
             </div>
             <div className={styles.contactDetail}>
+              <span className={styles.contactDetailLabel}>E-Mail</span>
+              <a href="mailto:info@baeckerei-meyer.ch">info@baeckerei-meyer.ch</a>
+            </div>
+            <div className={styles.contactDetail}>
               <span className={styles.contactDetailLabel}>Adresse</span>
               <span>Bahnhofstrasse 7, 6285 Hitzkirch</span>
             </div>
@@ -285,17 +298,22 @@ export default async function Page() {
 
       {/* FOOTER */}
       <footer className={styles.footer}>
-        <p className={styles.footerDisclaimer}>
-          Demo-Website, kein echtes Angebot. Alle Inhalte und Fotos:{" "}
-          <a
-            href="https://www.baeckerei-meyer.ch/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            baeckerei-meyer.ch
-          </a>
-          .
-        </p>
+        <div className={styles.footerLeft}>
+          <p className={styles.footerDisclaimer}>
+            Unverbindlicher Entwurf fur Backerei Meyer.
+          </p>
+          <p className={styles.footerAttribution}>
+            Inhalte und Bilder basieren auf der bestehenden Website{" "}
+            <a
+              href="https://www.baeckerei-meyer.ch/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              baeckerei-meyer.ch
+            </a>
+            .
+          </p>
+        </div>
         <p className={styles.footerContact}>
           <a href="mailto:deine-app@proton.me">deine-app@proton.me</a>
         </p>

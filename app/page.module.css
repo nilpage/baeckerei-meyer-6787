@@ -472,12 +472,32 @@
 .familie {
   background: var(--dark);
   padding: var(--space-xl) 2.5rem;
-  text-align: center;
+}
+
+.familieLayout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.familiePortrait {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.familiePortraitImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .familieInner {
-  max-width: 680px;
-  margin: 0 auto;
+  max-width: 560px;
 }
 
 .familieLabelLight {
@@ -504,8 +524,6 @@
   font-size: 1.0625rem;
   color: rgba(250, 247, 240, 0.72);
   line-height: 1.8;
-  max-width: 60ch;
-  margin: 0 auto;
 }
 
 /* ─── KONTAKT ─── */
@@ -651,30 +669,43 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+}
+
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 480px;
 }
 
 .footerDisclaimer {
   font-size: 0.8125rem;
   color: rgba(250, 247, 240, 0.45);
   line-height: 1.6;
-  max-width: 480px;
 }
 
-.footerDisclaimer a {
-  color: rgba(250, 247, 240, 0.6);
+.footerAttribution {
+  font-size: 0.8125rem;
+  color: rgba(250, 247, 240, 0.35);
+  line-height: 1.6;
+}
+
+.footerAttribution a {
+  color: rgba(250, 247, 240, 0.5);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-.footerDisclaimer a:hover {
+.footerAttribution a:hover {
   color: var(--accent-light);
 }
 
 .footerContact {
   font-size: 0.8125rem;
   color: rgba(250, 247, 240, 0.45);
+  align-self: flex-end;
 }
 
 .footerContact a {
@@ -774,10 +805,23 @@
     padding: 5rem 1.75rem;
   }
 
+  .familieLayout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .familiePortrait {
+    max-width: 280px;
+  }
+
   .footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
+    gap: 1.25rem;
+  }
+
+  .footerContact {
+    align-self: flex-start;
   }
 }
 
