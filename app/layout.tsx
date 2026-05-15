@@ -1,23 +1,42 @@
 import type { Metadata } from "next";
-
+import { Playfair_Display, DM_Sans } from "next/font/google";
+import { SanityLive } from "@/sanity/lib/live";
 import "./globals.css";
 
-// Scaffold-level metadata. Replace per lead in the bespoke layout (or
-// override here once the design phase is done). Fonts are intentionally
-// not loaded at the scaffold level — type pairings are a design choice
-// the per-lead designer makes after the soul-read.
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "sanity-scaffold",
-  description: "Scaffold for nopage per-lead Sanity demos. Replace before deploy.",
+  title: "Bäckerei Meyer Hitzkirch",
+  description:
+    "Bäckerei, Konditorei und Café in Hitzkirch. Täglich frisch gebacken, seit Generationen. Bahnhofstrasse 7, 6285 Hitzkirch.",
+  robots: "noindex,nofollow",
+  openGraph: {
+    title: "Bäckerei Meyer Hitzkirch",
+    description: "Bäckerei, Konditorei und Café in Hitzkirch.",
+    locale: "de_CH",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de-CH">
-      <body>{children}</body>
+    <html lang="de-CH" className={`${playfair.variable} ${dmSans.variable}`}>
+      <body>
+        {children}
+        <SanityLive />
+      </body>
     </html>
   );
 }

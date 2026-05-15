@@ -1,19 +1,47 @@
-/* Scaffold-level CSS reset only. No palette, no type system, no design
- * tokens — those are per-lead choices the designer makes after the
- * soul-read. Replace this file with the lead's bespoke globals before
- * deploying.
- */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
+}
+
+:root {
+  --bg: #faf7f0;
+  --bg-alt: #f0ebe0;
+  --dark: #1a0c04;
+  --accent: #c07020;
+  --accent-light: #d4892e;
+  --text: #1a0e06;
+  --muted: #7b6653;
+  --border: #ddd4c4;
+  --white: #ffffff;
+
+  --font-display: var(--font-display, "Playfair Display", Georgia, serif);
+  --font-body: var(--font-body, "DM Sans", system-ui, sans-serif);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7rem;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -25,6 +53,28 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

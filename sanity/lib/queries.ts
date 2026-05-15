@@ -1,3 +1,21 @@
-// Scaffold ships with no GROQ queries. The per-lead designer adds
-// queries here that match the schemas they shape for the lead and the
-// fields the bespoke render uses.
+import { defineQuery } from "next-sanity";
+
+export const SEITE_QUERY = defineQuery(`*[_type == "seite"][0]{
+  heldBild,
+  baeckerei{ bild, text },
+  konditorei{ bild, text },
+  cafe{ bild, text },
+  familie{ text },
+  oeffnungszeiten[]{ tag, zeiten },
+  telefon,
+  email,
+  adresse
+}`);
+
+export const NEUIGKEITEN_QUERY = defineQuery(`*[_type == "neuigkeit"] | order(datum desc){
+  _id,
+  titel,
+  beschreibung,
+  bild,
+  datum
+}`);

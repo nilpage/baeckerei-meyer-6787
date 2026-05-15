@@ -1,0 +1,796 @@
+/* ─── NAV ─── */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: rgba(26, 12, 4, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navLogoText {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--bg);
+  letter-spacing: 0.02em;
+}
+
+.navPhone {
+  font-size: 0.9375rem;
+  color: rgba(250, 247, 240, 0.75);
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+.navPhone:hover {
+  color: var(--accent-light);
+}
+
+/* ─── HERO ─── */
+
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.heroVeil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 12, 4, 0.82) 0%,
+    rgba(26, 12, 4, 0.35) 55%,
+    rgba(26, 12, 4, 0.12) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  padding: 0 2.5rem 4rem;
+  max-width: 800px;
+}
+
+.heroEyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 0.75rem;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-weight: 700;
+  line-height: 1.0;
+  color: var(--bg);
+  margin-bottom: 1.25rem;
+}
+
+.heroSub {
+  font-size: 1.125rem;
+  color: rgba(250, 247, 240, 0.7);
+  max-width: 480px;
+  line-height: 1.55;
+}
+
+/* ─── ANGEBOT ─── */
+
+.angebot {
+  background: var(--bg);
+  padding: var(--space-xl) 2.5rem;
+}
+
+.angebotGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.angebotItem {
+  padding: 3rem 2.5rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.angebotItem:hover {
+  background: var(--bg-alt);
+}
+
+.angebotNum {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.angebotName {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.angebotAdjectives {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* ─── SECTION HEADINGS ─── */
+
+.sectionLabel {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+}
+
+/* ─── BAECKEREI ─── */
+
+.baeckerei {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  min-height: 600px;
+  background: var(--bg-alt);
+}
+
+.backereiImg {
+  position: relative;
+  overflow: hidden;
+}
+
+.backereiImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.backereiContent {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.backereiText {
+  font-size: 1.0625rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 52ch;
+  white-space: pre-line;
+}
+
+.breadList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.breadList li {
+  font-size: 0.9375rem;
+  color: var(--text);
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.breadList li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+/* ─── HOLZBACKOFEN QUOTE ─── */
+
+.holzquote {
+  background: var(--dark);
+  padding: 7rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.holzquoteInner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.holzquoteText {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--bg);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.holzquoteMark {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(192, 112, 32, 0.7);
+  font-family: var(--font-body);
+}
+
+/* ─── KONDITOREI ─── */
+
+.konditorei {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  min-height: 560px;
+  background: var(--bg);
+}
+
+.konditContent {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order: 1;
+}
+
+.konditImg {
+  position: relative;
+  overflow: hidden;
+  order: 2;
+}
+
+.konditImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.konditText {
+  font-size: 1.0625rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 52ch;
+  white-space: pre-line;
+}
+
+.konditHighlights {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+}
+
+.konditItem {
+  font-size: 0.9375rem;
+  color: var(--text);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.konditItem::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ─── CAFÉ ─── */
+
+.cafe {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  min-height: 540px;
+  background: var(--bg-alt);
+}
+
+.cafeImg {
+  position: relative;
+  overflow: hidden;
+}
+
+.cafeImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cafeContent {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cafeText {
+  font-size: 1.0625rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 52ch;
+  white-space: pre-line;
+}
+
+.cafeHighlight {
+  background: var(--dark);
+  color: var(--bg);
+  padding: 1.5rem 2rem;
+  margin-top: 1.5rem;
+}
+
+.cafeHighlightTitle {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--accent-light);
+}
+
+.cafeHighlightText {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(250, 247, 240, 0.8);
+}
+
+/* ─── AKTUELLES ─── */
+
+.aktuelles {
+  background: var(--bg);
+  padding: var(--space-xl) 2.5rem;
+}
+
+.aktuellesHeader {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.aktuellesGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.neuigkeitCard {
+  background: var(--bg-alt);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 260px 1fr;
+}
+
+.neuigkeitCardImg {
+  overflow: hidden;
+}
+
+.neuigkeitCardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.neuigkeitCard:hover .neuigkeitCardImg img {
+  transform: scale(1.03);
+}
+
+.neuigkeitCardBody {
+  padding: 2rem 2.25rem;
+}
+
+.neuigkeitDate {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.neuigkeitTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.neuigkeitText {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ─── FAMILIE ─── */
+
+.familie {
+  background: var(--dark);
+  padding: var(--space-xl) 2.5rem;
+  text-align: center;
+}
+
+.familieInner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.familieLabelLight {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.familieTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--bg);
+  margin-bottom: 1.75rem;
+  line-height: 1.2;
+}
+
+.familieText {
+  font-size: 1.0625rem;
+  color: rgba(250, 247, 240, 0.72);
+  line-height: 1.8;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+/* ─── KONTAKT ─── */
+
+.kontakt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg-alt);
+}
+
+.kontaktHours {
+  padding: 5rem 4rem;
+  background: var(--bg-alt);
+  border-right: 1px solid var(--border);
+}
+
+.hoursTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.hoursTable tr + tr td {
+  padding-top: 0.75rem;
+}
+
+.hoursDay {
+  font-size: 0.9375rem;
+  color: var(--text);
+  padding-right: 2rem;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.hoursTime {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  vertical-align: top;
+}
+
+.contactDetails {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.contactDetail {
+  font-size: 0.9375rem;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.contactDetailLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  min-width: 4.5rem;
+  padding-top: 0.2rem;
+}
+
+.contactDetail a:hover {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.kontaktForm {
+  padding: 5rem 4rem;
+  background: var(--bg);
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.formLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.formInput,
+.formTextarea {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text);
+  transition: border-color 0.2s ease;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.formTextarea {
+  resize: vertical;
+}
+
+.formSubmit {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s ease;
+}
+
+.formSubmit:hover {
+  background: var(--accent-light);
+}
+
+/* ─── FOOTER ─── */
+
+.footer {
+  background: var(--dark);
+  padding: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerDisclaimer {
+  font-size: 0.8125rem;
+  color: rgba(250, 247, 240, 0.45);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.footerDisclaimer a {
+  color: rgba(250, 247, 240, 0.6);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footerDisclaimer a:hover {
+  color: var(--accent-light);
+}
+
+.footerContact {
+  font-size: 0.8125rem;
+  color: rgba(250, 247, 240, 0.45);
+}
+
+.footerContact a {
+  color: rgba(192, 112, 32, 0.7);
+  transition: color 0.2s ease;
+}
+
+.footerContact a:hover {
+  color: var(--accent-light);
+}
+
+/* ─── RESPONSIVE ─── */
+
+@media (max-width: 900px) {
+  .angebotGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .baeckerei,
+  .konditorei,
+  .cafe {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .baeckerei {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .backereiImg,
+  .konditImg,
+  .cafeImg {
+    height: 280px;
+  }
+
+  .backereiImg img,
+  .konditImg img,
+  .cafeImg img {
+    height: 100%;
+  }
+
+  .backereiContent,
+  .konditContent,
+  .cafeContent {
+    padding: 3rem 1.75rem;
+    order: 2 !important;
+  }
+
+  .konditImg {
+    order: 1 !important;
+  }
+
+  .backereiImg {
+    order: 1;
+  }
+
+  .kontakt {
+    grid-template-columns: 1fr;
+  }
+
+  .kontaktHours {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 1.75rem;
+  }
+
+  .kontaktForm {
+    padding: 3rem 1.75rem;
+  }
+
+  .heroContent {
+    padding: 0 1.5rem 3rem;
+  }
+
+  .nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .angebot {
+    padding: 4rem 1.75rem;
+  }
+
+  .aktuellesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .aktuelles {
+    padding: 4rem 1.75rem;
+  }
+
+  .holzquote {
+    padding: 5rem 1.75rem;
+  }
+
+  .familie {
+    padding: 5rem 1.75rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .angebotItem {
+    padding: 2rem 1.5rem;
+  }
+
+  .konditHighlights {
+    grid-template-columns: 1fr;
+  }
+}

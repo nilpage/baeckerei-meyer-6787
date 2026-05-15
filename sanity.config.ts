@@ -12,7 +12,7 @@ import { structure } from "./sanity/structure";
 
 export default defineConfig({
   name: "default",
-  title: "Scaffold Studio",
+  title: "Bäckerei Meyer",
   basePath: "/studio",
   projectId,
   dataset,
