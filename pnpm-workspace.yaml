@@ -1,0 +1,7 @@
+# placeholder; build allowlist lives in package.json under pnpm.onlyBuiltDependencies
+
+allowBuilds:
+  esbuild: set this to true or false
+  sharp: set this to true or false
+  unrs-resolver: set this to true or false
+verifyDepsBeforeRun: never
